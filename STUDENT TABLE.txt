@@ -1,0 +1,7 @@
+=======STUDENT TABLE CREATE======
+
+use student;
+CREATE TABLE s
+(sno char(3)primary key,
+sname varchar(50)not null,
+rno int(2)not null);

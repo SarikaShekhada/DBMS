@@ -1,0 +1,1 @@
+select s.sname,p.p_city,sp.qty from sp,p,s where sp.pno=p.pno and sp.sno=s.sno and s.s_status<30;

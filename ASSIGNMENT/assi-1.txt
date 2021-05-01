@@ -1,0 +1,59 @@
+=====create dept table=====
+
+use ass1;
+create table dept(
+dept_id char(3)primary key,
+dept_name varchar(30) not null,
+dept_loction varchar(50) not null
+)
+
+
+
+=====create emp table=====
+
+use ass1;
+create table emp(
+emp_id char(3) primary key,
+emp_name varchar(20) not null,
+dept_id char(3) not null,
+PRIMARY KEY (dept_id),
+FOREIGN KEY (dept_id) REFERENCES dept(dept_id),
+emp_boss_id char(3) not null,
+emp_salary long(10) not null
+)
+
+
+
+=====insert dept table=====
+
+insert into dept(dept_id,dept_name,dept_loction)
+values("d1","mca","ahemdabad"),
+("d2","mba","rajkot"),
+("d3","msc","ahemdabad");
+
+
+
+=====insert emp table=====
+
+insert into emp(emp_id,emp_name,dept_id,emp_boss_id,emp_salary)
+values("e1","smith","d1","eb1","20000"),
+("e2","queen","d1","eb1","10000"),
+("e3","aaliya","d1","eb1","50000"),
+("e4","blake","d2","eb2","15000"),
+("e5","clark","d2","eb2","2500"),
+("e6","kuhu","d2","eb2","600"),
+("e7","boss","d3","eb3","17000"),
+("e8","rose","d3","eb3","800"),
+("e9","allen","d3","eb3","10000");
+
+
+
+=====select query=====
+
+
+select 
+	emp_name,max(emp_salary)
+from
+	emp
+    group by emp_name
+    having max(emp_salary) > 50000;

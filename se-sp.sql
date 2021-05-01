@@ -1,0 +1,1 @@
+select sname,s_city from s INNER JOIN sp where sp.qty>=200;

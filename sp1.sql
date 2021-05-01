@@ -1,0 +1,1 @@
+select sno,qty from sp where sno="S1" and qty=100;

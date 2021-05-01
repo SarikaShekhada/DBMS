@@ -1,0 +1,1 @@
+select max(weight),sp.sno,sp.qty from p,sp;
